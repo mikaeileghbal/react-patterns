@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import TweetSearchResult from "./components/TweetSearchResult";
 
-function App() {
+const tweets = [
+  {
+    category: "Entertainment",
+    retweets: "450",
+    isLocal: false,
+    text: "Omg. A Tweet.",
+  },
+  {
+    category: "Entertainment",
+    retweets: "100",
+    isLocal: false,
+    text: "Omg. Another.",
+  },
+  {
+    category: "Technology",
+    retweets: "32",
+    isLocal: false,
+    text: "New Feature.",
+  },
+  {
+    category: "Technology",
+    retweets: "88",
+    isLocal: true,
+    text: "Laerning React",
+  },
+];
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <TweetSearchResult tweets={tweets} />
     </div>
   );
 }
-
-export default App;
