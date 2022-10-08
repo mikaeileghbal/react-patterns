@@ -1,5 +1,10 @@
 import React from "react";
 import TweetSearchResult from "./components/TweetSearchResult";
+import ThemedApp from "./patterns/Provider/ThemedApp";
+import UsingProvider from "./patterns/Provider/UsingProvider";
+import ProxyTest from "./patterns/Proxy/ProxyTest";
+import singletonCounter from "./patterns/Singleton/Counter";
+import SingletonTest from "./patterns/Singleton/TestApp";
 
 const tweets = [
   {
@@ -29,8 +34,20 @@ const tweets = [
 ];
 export default function App() {
   return (
-    <div>
-      <TweetSearchResult tweets={tweets} />
-    </div>
+    <>
+      <div>
+        <TweetSearchResult tweets={tweets} />
+      </div>
+      <div>
+        <SingletonTest />
+      </div>
+      <div>{/* <ProxyTest /> */}</div>
+      <div>
+        <UsingProvider />
+      </div>
+      <div>
+        <ThemedApp />
+      </div>
+    </>
   );
 }
