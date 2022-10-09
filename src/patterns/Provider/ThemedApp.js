@@ -1,39 +1,44 @@
-import React, { createContext, useContext, useState } from "react";
+import React from "react";
+import ThemeProvider from "./ThemeProvider";
+import { useThemeContext } from "./useThemeContext";
 
-const themes = {
-  light: {
-    backgroundColor: "#fff",
-    color: "#000",
-  },
-  dark: {
-    backgroundColor: "#333",
-    color: "#fff",
-  },
-};
-
-const ThemeContext = createContext();
+// const themes = {
+//   light: {
+//     backgroundColor: "#fff",
+//     color: "#000",
+//   },
+//   dark: {
+//     backgroundColor: "#333",
+//     color: "#fff",
+//   },
+// };
+// const ThemeContext = createContext();
 
 export default function ThemedApp() {
-  const [theme, setTheme] = useState("dark");
-
-  function toggleTheme() {
-    setTheme(theme === "dark" ? "light" : "dark");
-  }
-
-  const providerValue = { theme: themes[theme], toggleTheme };
+  //const [theme, setTheme] = useState("dark");
+  // function toggleTheme() {
+  //   setTheme(theme === "dark" ? "light" : "dark");
+  // }
+  // const providerValue = { theme: themes[theme], toggleTheme };
 
   return (
     <div>
-      <ThemeContext.Provider value={providerValue}>
+      {/* <ThemeContext.Provid value={providerValue}>
         <Toggle />
         <List />
-      </ThemeContext.Provider>
+      </ThemeContext.Provid> */}
+
+      <ThemeProvider>
+        <Toggle />
+        <List />
+      </ThemeProvider>
     </div>
   );
 }
 
 function Toggle() {
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const { toggleTheme } = useThemeContext();
+
   return (
     <div>
       <label>
@@ -45,8 +50,8 @@ function Toggle() {
 }
 
 function List() {
-  const { theme } = useContext(ThemeContext);
-  console.log(theme);
+  const { theme } = useThemeContext();
+
   return (
     <div>
       <ul style={theme}>
