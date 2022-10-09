@@ -1,5 +1,8 @@
 import React from "react";
 import TweetSearchResult from "./components/TweetSearchResult";
+import DogImages from "./patterns/ContainerPresentational/DogImages";
+
+import DogImagesContainer from "./patterns/ContainerPresentational/DogImagesContainer";
 import ThemedApp from "./patterns/Provider/ThemedApp";
 import UsingProvider from "./patterns/Provider/UsingProvider";
 import ProxyTest from "./patterns/Proxy/ProxyTest";
@@ -47,6 +50,10 @@ export default function App() {
       </div>
       <div>
         <ThemedApp />
+      </div>
+      <div>
+        {/* <DogImagesContainer /> */}
+        <DogImages />
       </div>
     </>
   );
