@@ -3,9 +3,11 @@ import TweetSearchResult from "./components/TweetSearchResult";
 import DogImages from "./patterns/ContainerPresentational/DogImages";
 
 import DogImagesContainer from "./patterns/ContainerPresentational/DogImagesContainer";
+import ObserverApp from "./patterns/Observer/ObserverApp";
 import ThemedApp from "./patterns/Provider/ThemedApp";
 import UsingProvider from "./patterns/Provider/UsingProvider";
 import ProxyTest from "./patterns/Proxy/ProxyTest";
+import InputWithRender from "./patterns/RenderProp/InputWithRender";
 import singletonCounter from "./patterns/Singleton/Counter";
 import SingletonTest from "./patterns/Singleton/TestApp";
 
@@ -54,6 +56,12 @@ export default function App() {
       <div>
         {/* <DogImagesContainer /> */}
         <DogImages />
+      </div>
+      <div>
+        <ObserverApp />
+      </div>
+      <div>
+        <InputWithRender />
       </div>
     </>
   );
