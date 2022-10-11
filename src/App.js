@@ -3,6 +3,7 @@ import TweetSearchResult from "./components/TweetSearchResult";
 import DogImages from "./patterns/ContainerPresentational/DogImages";
 
 import DogImagesContainer from "./patterns/ContainerPresentational/DogImagesContainer";
+import Hook from "./patterns/Hook/Hook";
 import ObserverApp from "./patterns/Observer/ObserverApp";
 import ThemedApp from "./patterns/Provider/ThemedApp";
 import UsingProvider from "./patterns/Provider/UsingProvider";
@@ -62,6 +63,9 @@ export default function App() {
       </div>
       <div>
         <InputWithRender />
+      </div>
+      <div>
+        <Hook />
       </div>
     </>
   );
