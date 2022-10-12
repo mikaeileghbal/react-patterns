@@ -26,20 +26,18 @@ function useHover() {
 export default function Hover() {
   const [ref, hovering] = useHover();
   return (
-    <>
+    <div ref={ref}>
       {hovering && <div>Mouse is over the element</div>}
-      <div ref={ref}>
-        <div>
-          <ul>
-            <li>item 1</li>
-            <li>item 2</li>
-            <li>item 3</li>
-            <li>item 4</li>
-            <li>item 5</li>
-            <li>item 6</li>
-          </ul>
-        </div>
+      <div>
+        <ul>
+          <li>item 1</li>
+          <li>item 2</li>
+          <li>item 3</li>
+          <li>item 4</li>
+          <li>item 5</li>
+          <li>item 6</li>
+        </ul>
       </div>
-    </>
+    </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import TweetSearchResult from "./components/TweetSearchResult";
+import FlyoutMenu from "./patterns/Compound/FlyoutMenu";
 import DogImages from "./patterns/ContainerPresentational/DogImages";
 
 import DogImagesContainer from "./patterns/ContainerPresentational/DogImagesContainer";
@@ -74,6 +75,9 @@ export default function App() {
       </div>
       <div>
         <Hover />
+      </div>
+      <div>
+        <FlyoutMenu />
       </div>
     </>
   );
