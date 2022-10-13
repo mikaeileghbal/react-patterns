@@ -21,13 +21,14 @@ export default function Pager({ pageCount }) {
     <div className="pager-container">
       <PageStatus page={page} pageCount={pageCount} />
       <Pages page={page} pages={pages} />
-
-      <button disabled={page === 1} onClick={handlePrevious}>
-        Previous
-      </button>
-      <button disabled={page === pageCount} onClick={handleNext}>
-        Next
-      </button>
+      <div>
+        <button disabled={page === 1} onClick={handlePrevious}>
+          Previous
+        </button>
+        <button disabled={page === pageCount} onClick={handleNext}>
+          Next
+        </button>
+      </div>
     </div>
   );
 }

@@ -14,18 +14,18 @@ export default function FlyoutMenu() {
       <GroupSelectionContext.Provider
         value={{ groupSelection, setGroupSelection }}
       >
-        <FlyOut>
+        <FlyOut name="genre">
           <FlyOut.Toggle />
           <FlyOut.List>
-            <FlyOut.Item name="add">Add</FlyOut.Item>
-            <FlyOut.Item name="update">Updat</FlyOut.Item>
+            <FlyOut.Item name="pop">Pop</FlyOut.Item>
+            <FlyOut.Item name="rock">Rock</FlyOut.Item>
           </FlyOut.List>
         </FlyOut>
-        <FlyOut>
+        <FlyOut name="format">
           <FlyOut.Toggle />
           <FlyOut.List>
-            <FlyOut.Item name="edit">Edit</FlyOut.Item>
-            <FlyOut.Item name="delete">Delete</FlyOut.Item>
+            <FlyOut.Item name="vinyl">Vinyl</FlyOut.Item>
+            <FlyOut.Item name="cd">CD</FlyOut.Item>
           </FlyOut.List>
         </FlyOut>
         <div>
@@ -38,7 +38,7 @@ export default function FlyoutMenu() {
 
 const FlyOutContext = createContext();
 
-function FlyOut({ children }) {
+function FlyOut({ children, name }) {
   const [open, toggle] = useState(false);
   const [selection, setSelection] = useState({});
 
@@ -48,7 +48,7 @@ function FlyOut({ children }) {
 
   useEffect(() => {
     console.log(selection);
-    setGroupSelection({ ...groupSelection, ...selection });
+    setGroupSelection({ ...groupSelection, [name]: { ...selection } });
   }, [selection]);
 
   return (
