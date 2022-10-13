@@ -1,0 +1,10 @@
+.pager-container {
+  padding: 1rem;
+}
+.page {
+  display: inline-block;
+  padding: 0.5rem;
+}
+.current-page {
+  background-color: lightblue;
+}

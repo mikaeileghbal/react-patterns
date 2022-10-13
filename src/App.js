@@ -1,4 +1,5 @@
 import React from "react";
+import Pager from "./components/Pager/Pager";
 import TweetSearchResult from "./components/TweetSearchResult";
 import FlyoutMenu from "./patterns/Compound/FlyoutMenu";
 import DogImages from "./patterns/ContainerPresentational/DogImages";
@@ -79,6 +80,7 @@ export default function App() {
       <div>
         <FlyoutMenu />
       </div>
+      <Pager pageCount={10} />
     </>
   );
 }
