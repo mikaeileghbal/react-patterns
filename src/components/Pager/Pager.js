@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./style.css";
+import styles from "./style.module.scss";
 
 export default function Pager({ pageCount }) {
   const [page, setPage] = useState(1);
@@ -18,7 +18,7 @@ export default function Pager({ pageCount }) {
   }
 
   return (
-    <div className="pager-container">
+    <div className={styles.pagerContainer}>
       <PageStatus page={page} pageCount={pageCount} />
       <Pages page={page} pages={pages} />
       <div>
@@ -53,7 +53,7 @@ function Pages({ pages, page }) {
 
 function Page({ page, current }) {
   function getCurrentStyle(current) {
-    return current ? "page current-page" : "page";
+    return current ? styles.page + " " + styles.currentPage : styles.page;
   }
   return <span className={getCurrentStyle(current)}>{page}</span>;
 }
