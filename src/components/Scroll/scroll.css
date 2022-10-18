@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+}
+
+img {
+  width: 20%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.header {
+  position: fixed;
+  padding: 1.5em;
+  color: white;
+  background-color: #333;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 8px 18px rgba(0, 0, 0, 0.18);
+  opacity: 1;
+  transform-origin: top;
+  transform: scaleY(1);
+  transition: 0.4s;
+}
+
+.header.hide {
+  opacity: 0;
+  transform: scaleY(0);
+}

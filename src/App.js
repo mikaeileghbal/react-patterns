@@ -1,5 +1,6 @@
 import React from "react";
 import Pager from "./components/Pager/Pager";
+import Scroll from "./components/Scroll/Scroll";
 import TweetSearchResult from "./components/TweetSearchResult";
 import FlyoutMenu from "./patterns/Compound/FlyoutMenu";
 import DogImages from "./patterns/ContainerPresentational/DogImages";
@@ -45,6 +46,9 @@ const tweets = [
 export default function App() {
   return (
     <>
+      <div>
+        <Scroll />
+      </div>
       <div>
         <TweetSearchResult tweets={tweets} />
       </div>
