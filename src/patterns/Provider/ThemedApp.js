@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ThemeProvider from "./ThemeProvider";
 import { useThemeContext } from "./useThemeContext";
 
@@ -51,6 +51,13 @@ function Toggle() {
 
 function List() {
   const { theme } = useThemeContext();
+  const [textColor, setTextColor] = useState("");
+
+  useEffect(() => {
+    console.log("theme", theme);
+    const { color } = theme;
+    setTextColor(color);
+  }, [theme]);
 
   return (
     <div>
@@ -62,6 +69,7 @@ function List() {
         <li>List item 5</li>
         <li>List item 6</li>
       </ul>
+      <p>{textColor}</p>
     </div>
   );
 }

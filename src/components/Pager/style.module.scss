@@ -1,10 +1,36 @@
 .pagerContainer {
   padding: 1rem;
 }
+
 .page {
   display: inline-block;
   padding: 0.5rem;
+  cursor: pointer;
+  position: relative;
 }
-.currentPage {
+
+.page:hover {
+  background-color: lightgray;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  top: 0;
+  background-color: #333;
+  opacity: 0.2;
+  transition: 0.3s;
+  z-index: 2;
+}
+
+.page.currentPage {
   background-color: lightblue;
+  position: relative;
+}
+
+.page.currentPage::before {
+  opacity: 1;
 }
