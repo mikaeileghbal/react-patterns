@@ -25,17 +25,25 @@ export default function Pager({ pageCount }) {
   return (
     <div className={styles.pagerContainer}>
       <PageStatus page={page} pageCount={pageCount} />
-      <Pages
-        page={page}
-        pages={pages}
-        pageCount={pageCount}
-        onClick={handleClick}
-      />
-      <div>
-        <button disabled={page === 1} onClick={handlePrevious}>
+      <div className={styles.pagesWrap}>
+        <button
+          className={styles.btnPager}
+          disabled={page === 1}
+          onClick={handlePrevious}
+        >
           Previous
         </button>
-        <button disabled={page === pageCount} onClick={handleNext}>
+        <Pages
+          page={page}
+          pages={pages}
+          pageCount={pageCount}
+          onClick={handleClick}
+        />
+        <button
+          className={styles.btnPager}
+          disabled={page === pageCount}
+          onClick={handleNext}
+        >
           Next
         </button>
       </div>

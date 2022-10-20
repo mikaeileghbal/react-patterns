@@ -1,15 +1,26 @@
 .pagerContainer {
   padding: 1rem;
+  user-select: none;
+}
+
+.pagesWrap {
+  display: flex;
+  align-items: center;
+  gap: 1em;
 }
 
 .page {
   display: inline-block;
-  padding: 0.5rem;
-  cursor: pointer;
+  padding: 0.5rem 0.8rem;
   position: relative;
+  margin: 0 0.5rem;
 }
 
-.page:hover {
+.page:not(.currentPage) {
+  cursor: pointer;
+}
+
+.page:not(.currentPage):hover {
   background-color: lightgray;
 }
 
@@ -29,8 +40,23 @@
 .page.currentPage {
   background-color: lightblue;
   position: relative;
+  user-select: none;
 }
 
 .page.currentPage::before {
   opacity: 1;
+}
+
+// button {
+// }
+
+.btnPager {
+  width: 80px;
+  color: white;
+  padding: 0.5rem 1em;
+  background-color: lightseagreen;
+  border: none;
+  border-radius: 4px;
+
+  cursor: pointer;
 }
